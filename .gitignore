@@ -53,3 +53,8 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+
+HMI_FW/Drivers
+HMI_FW/Archive
+HMI_FW/build

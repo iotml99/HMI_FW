@@ -1,0 +1,53 @@
+{
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 100,
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "search.exclude": {
+    "**/build": true,
+    "**/*.o": true,
+    "**/*.elf": true,
+    "**/*.map": true,
+    "**/*.lst": true,
+    "**/*.bin": true,
+    "**/*.hex": true
+  },
+  "actionButtons": {
+    "defaultColor": "#ff0034",
+    "loadNpmCommands": false,
+    "reloadButton": "♻️",
+    "commands": [
+      {
+        "name": "$(gear) Build",
+        "color": "white",
+        "tooltip": "Compile the firmware using Make",
+        "cwd": "${workspaceFolder}",
+        "singleInstance": true,
+        "command": "make"
+      },
+      {
+        "name": "$(trash) Clean",
+        "color": "white",
+        "tooltip": "Remove compiled objects and binaries",
+        "cwd": "${workspaceFolder}",
+        "singleInstance": true,
+        "command": "make clean"
+      },
+      {
+        "name": "$(refresh) Rebuild",
+        "color": "white",
+        "tooltip": "Clean and then build the firmware",
+        "cwd": "${workspaceFolder}",
+        "singleInstance": true,
+        "command": "(make clean) -and (make)"
+      },
+      {
+        "name": "$(zap) Flash",
+        "color": "white",
+        "tooltip": "Upload firmware to the board via ST-Link",
+        "cwd": "${workspaceFolder}",
+        "singleInstance": true,
+        "command": "make upload-hex-stlink"
+      },
+    ]
+  }
+}
